@@ -6,10 +6,15 @@ import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-const reducer = (state = { items: [], item: '' }, action) => {
-  return state;
+
+
+const reducer = 
+  (store = [], action) => {
+        return store;
 }
-const store = createStore (reducer)
+
+
+const store = createStore(reducer)
 
 ReactDOM.render(
   <StrictMode>
