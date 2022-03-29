@@ -3,7 +3,8 @@ import './App.css';
 import TodoList from './TodoList';
 function App() {
   return (
-    <div className="App">
+    <div className= "mainPage">
+      <h1> todos </h1>
       <TodoList />
     </div>
   );
