@@ -19,5 +19,5 @@ class TodoList extends React.Component {
     );
   }
 }
-const mapStore = (store) => ({ items: store.items, title: store.newItem });
-export default connect(mapStore)(TodoList);
+const mapStoreToProps = (store) => ({ items: store.items, title: store.newItem });
+export default connect(mapStoreToProps)(TodoList);
