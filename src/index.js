@@ -10,24 +10,11 @@ const todoList = [
   { id: 0, title: 'Wash Cloths', done: false },
   { id: 1, title: 'Do Laundry', done: true }
 ]
-const reducer = (store = { items: todoList, newItem: '' }, action) => {
-    switch(action.type){
-      case 'ADD_ITEM':
-          const newItem = {
-            id: store.items.length,
-            title: store.newItem,
-            done: false
-          }
-          return {...store, items: [...store.items, newItem]}
-      case 'TODO_CHANGED':
-          return {...store, items: store.target.value}
-      default:
-        return store;
+const reducer = 
+  (store = { items: todoList, newItem: '' }, action) => 
+    {
+      return store;
     }
-      
-}
-
-
 const store = createStore(reducer)
 
 ReactDOM.render(
