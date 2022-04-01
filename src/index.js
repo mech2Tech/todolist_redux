@@ -6,20 +6,29 @@ import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-const todoList = [
-  { id: 0, title: 'Wash Cloths', done: false },
-  { id: 1, title: 'Do Laundry', done: true }
-]
 const reducer = 
-  (store = { items: todoList, newItem: '' }, action) => 
-    {
-      return store;
+  (store = [{ id: 0, title: 'Wash Clothes', done: false }], action) => {
+    switch (action.type) {
+      case 'HANDLE_CHANGE':
+        return [...store,
+          {
+            id: store.length +1,
+            title: action.title,
+            done: false
+        }]
+      case 'ADD_ITEM':
+        return[...store]
+      default:
+        return store;
     }
+  }
 const store = createStore(reducer)
 
 ReactDOM.render(
   <StrictMode>
-    <Provider store = {store}> <App /> </Provider>
+    <Provider store = {store}> 
+      <App /> 
+    </Provider>
   </StrictMode>,
   document.getElementById('root')
 );
